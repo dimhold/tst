@@ -5,6 +5,9 @@ on:
     branches:
       - '^2[0-9].[0-9]{1,2}-(PRD|prd|AR|ar|TD|td)-[0-9]{3,5}'
       - 'master'
+    tags:
+      - v*
+
   pull_request:
     branches:
       - '^(PRD|prd|AR|ar|TD|td)-[0-9]{3,5}'
@@ -29,9 +32,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create GitHub release
       uses: Roang-zero1/github-upload-release-artifacts-action@master
-      with:
-        args:
-          - /
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
