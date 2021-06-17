@@ -21,4 +21,4 @@ jobs:
       uses: Roang-zero1/github-create-release-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: .github/workflows/upload.sh github_api_token=${{ secrets.GITHUB_TOKEN }} owner=dimhold repo=tst tag=v7 filename=./upload.sh
+    - run: curl --data-binary @"./upload.sh" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/octet-stream" https://uploads.github.com/repos/dimhold/tst/releases/v7/assets?name=$(basename ./upload.sh)
