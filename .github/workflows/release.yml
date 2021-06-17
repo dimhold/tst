@@ -21,11 +21,4 @@ jobs:
       uses: Roang-zero1/github-create-release-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Create GitHub release
-      uses: Roang-zero1/github-upload-release-artifacts-action@master
-      with:
-        args:
-        - build.txt
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: .github/workflows/upload.sh github_api_token=${{ secrets.GITHUB_TOKEN }} owner=dimhold repo=tst tag=v7 filename=./upload.sh
