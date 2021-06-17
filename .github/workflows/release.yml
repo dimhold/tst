@@ -28,5 +28,4 @@ jobs:
         - build.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
+    - run: .github/workflows/upload.sh github_api_token=${{ secrets.GITHUB_TOKEN }} owner=dimhold repo=tst tag=v7 filename=./upload.sh
