@@ -20,5 +20,5 @@ jobs:
     - name: Create release
       uses: Roang-zero1/github-create-release-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: curl --data-binary @"./upload.sh" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/octet-stream" https://uploads.github.com/repos/dimhold/tst/releases/v7/assets?name=$(basename ./upload.sh)
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+    - run: curl --data-binary @"./Test3" -H "Authorization: token ${{ secrets.TOKEN }}" -H "Content-Type: application/octet-stream" https://uploads.github.com/repos/dimhold/tst/releases/v7/assets?name=$(basename ./Test3)
